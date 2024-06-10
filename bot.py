@@ -2,6 +2,7 @@
 
 from aiohttp import web
 from plugins import web_server
+import pyrogram.utils
 
 import pyromod.listen
 from pyrogram import Client
@@ -11,6 +12,7 @@ from datetime import datetime
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
 
+pyrogram.utils.MIN_CHANNEL_ID = -1009147483647
 class Bot(Client):
     def __init__(self):
         super().__init__(
